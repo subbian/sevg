@@ -1,0 +1,4 @@
+include ':volleylibrary'
+include ':loginPageLib'
+include ':app'
+rootProject.name = "SEVG"

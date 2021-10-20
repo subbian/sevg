@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="sevg_5dp">5dp</dimen>
+    <dimen name="sevg_10dp">10dp</dimen>
+    <dimen name="sevg_15dp">15dp</dimen>
+    <dimen name="sevg_20dp">20dp</dimen>
+    <dimen name="sevg_25dp">25dp</dimen>
+
+    <dimen name="sevg_15sp">15sp</dimen>
+    <dimen name="sevg_16sp">16sp</dimen>
+    <dimen name="sevg_17sp">17sp</dimen>
+    <dimen name="sevg_18sp">18sp</dimen>
+</resources>

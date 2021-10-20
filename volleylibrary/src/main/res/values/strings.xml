@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="time_out_either_network_error">You have either time out or there is no network connection</string>
+</resources>

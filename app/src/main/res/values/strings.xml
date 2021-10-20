@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">SEVG</string>
+
+    <string name="sales">Sales</string>
+    <string name="inventory">Inventory</string>
+    <string name="sales_details">Sales Details</string>
+    <string name="inventory_details">Inventory Details</string>
+    <string name="quantity">Quantity</string>
+    <string name="rate">Rate</string>
+    <string name="loading_charges">Loading Charges</string>
+    <string name="transport_charges">Transport Charges</string>
+    <string name="date">Date</string>
+    <string name="main_group">Main Group</string>
+    <string name="sub_group">Sub Group</string>
+    <string name="item_name">Item Name</string>
+    <string name="total_amount">Total Amount :</string>
+    <string name="total_amount_title">Total Amount</string>
+    <string name="submit">Submit</string>
+    <string name="selling_price">Selling Price</string>
+    <string name="bill_no">Bill No</string>
+    <string name="transfer_status">Transfer Status</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="customer_phone_no">Customer Mobile No</string>
+    <string name="exit_warning_message">Are you sure want to exit?</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="logout">Logout</string>
+    <string name="invoice_number">Invoice Number</string>
+    <string name="invoice_amount">Invoice Amount</string>
+    <string name="empty_float">0.0</string>
+    <string name="bill_number">Bill Number</string>
+    <string name="inward">Inward</string>
+    <string name="outward">Outward</string>
+    <string name="save">Save</string>
+    <string name="add_line_item">AddLineItem</string>
+    <string name="amount">Amount</string>
+    <string name="rate_quantity">Rate x Quantity</string>
+    <string name="current_warehouse">Current Warehouse</string>
+    <string name="to_warehouse">To Warehouse</string>
+
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="addLineItem_delete">Are you sure want to delete this item?</string>
+
+    <string name="sales_details_delete_url">http://15.206.79.147:18300/sveg/salesdelete</string>
+    <string name="inward_outward_delete_url">http://15.206.79.147:18300/sveg/inventoryinwardoutwarddelete</string>
+    <string name="sales_creation_url">http://15.206.79.147:18300/sveg/sales</string>
+    <string name="inward_outward_creation_url">http://15.206.79.147:18300/sveg/inventoryinwardoutward</string>
+    <string name="sales_update_url">http://15.206.79.147:18300/sveg//salesupdate</string>
+    <string name="inward_outward_update_url">http://15.206.79.147:18300/sveg/inventoryinwardoutwardupdate</string>
+
+    <string name="addLineItem_back_press">Are you sure you want to leave?</string>
+    <string name="addLineItem_title">AddLineItem</string>
+</resources>

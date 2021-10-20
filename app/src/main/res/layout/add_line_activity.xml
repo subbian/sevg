@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/addLineItem_toolbar"
+        layout="@layout/toolbar_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sevg_5dp"
+            android:layout_marginBottom="@dimen/sevg_25dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sevg_5dp"
+                android:text="@string/main_group"
+                android:textSize="@dimen/sevg_16sp" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/main_group_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include layout="@layout/horizontal_divider" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/sub_group_spinner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sevg_5dp"
+            android:layout_marginBottom="@dimen/sevg_25dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sevg_5dp"
+                android:text="@string/sub_group"
+                android:textSize="@dimen/sevg_16sp" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sub_group_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include layout="@layout/horizontal_divider" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sevg_5dp"
+            android:layout_marginBottom="@dimen/sevg_25dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sevg_5dp"
+                android:text="@string/item_name"
+                android:textSize="@dimen/sevg_16sp" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/item_name_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include layout="@layout/horizontal_divider" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/sevg_15dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/rate_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/selling_price"
+                android:layout_marginEnd="@dimen/sevg_15dp"
+                android:textColorHint="@color/dark_gray"
+                app:hintTextAppearance="@style/TextInputLayoutHintStyle">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sevg_18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/quantity_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/quantity"
+                android:textColorHint="@color/dark_gray"
+                app:hintTextAppearance="@style/TextInputLayoutHintStyle">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/quantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sevg_18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/sevg_15dp"
+            android:layout_marginBottom="@dimen/sevg_20dp"
+            android:backgroundTint="@color/dark_blue"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textSize="@dimen/sevg_18sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

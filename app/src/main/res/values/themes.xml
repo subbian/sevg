@@ -1,0 +1,99 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SEVG" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="android:colorPrimary">@color/light_blue</item>
+        <item name="android:colorPrimaryDark">@color/dark_blue</item>
+        <item name="colorPrimaryVariant">@color/dark_blue</item>
+        <item name="android:colorAccent">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+    </style>
+
+    <style name="Theme.SEVG.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+
+<!--        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>-->
+    </style>
+
+    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" parent="Base.Widget.MaterialComponents.TextInputLayout">
+        <!--        //sets this style as the ViewGroup theme, because it knows you forgot it's actually a theme!-->
+        <item name="android:theme">
+            @style/ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox.Dense
+        </item>
+
+        <!--        //values: filled or outline-->
+        <item name="boxBackgroundMode">outline</item>
+
+        <!--        //a color for the box background-->
+        <!--        <item name="boxBackgroundColor">@color/mtrl_textinput_filled_box_default_background_color</item>-->
+
+        <!--        //if you set the .Dense sub-style this vallue is set to 8dp-->
+        <item name="boxCollapsedPaddingTop">200dp</item>
+
+        <!--        <item name="boxCornerRadiusBottomStart">@dimen/mtrl_textinput_box_corner_radius_small</item>-->
+        <!--        <item name="boxCornerRadiusBottomEnd">@dimen/mtrl_textinput_box_corner_radius_small</item>-->
+
+    </style>
+
+    <style name="Base.Widget.MaterialComponents.TextInputLayout" parent="Widget.Design.TextInputLayout">
+
+        <!--        //default values, in case you don't select FilledBox or OutlinedBox-->
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxBackgroundColor">@null</item>
+        <item name="boxCollapsedPaddingTop">0dp</item>
+
+        <item name="boxCornerRadiusTopStart">15dp</item>
+        <item name="boxCornerRadiusTopEnd">15dp</item>
+        <item name="boxCornerRadiusBottomEnd">15dp</item>
+        <item name="boxCornerRadiusBottomStart">15dp</item>
+
+        <!--        //The highlight color. The activated hint, the underline for FilledBox, rectangle Stroke of OutlinedBox-->
+        <item name="boxStrokeColor">@color/light_gray</item>
+    </style>
+
+    <style name="Widget.Design.TextInputLayout" parent="android:Widget">
+        <!--        //Defaults the textinputlayout to the plain one, offered by older versions of support library.-->
+        <item name="boxBackgroundMode">none</item>
+        <!--        //Good old TextAppearance themes for hint, helper and error-->
+        <item name="hintTextAppearance">@style/TextAppearance.Design.Hint</item>
+        <item name="helperTextTextAppearance">@style/TextAppearance.Design.HelperText</item>
+        <item name="errorTextAppearance">@style/TextAppearance.Design.Error</item>
+        <!--        //Good old TextAppearance for Input character count-->
+        <item name="counterTextAppearance">@style/TextAppearance.Design.Counter</item>
+        <item name="counterOverflowTextAppearance">@style/TextAppearance.Design.Counter.Overflow
+        </item>
+
+        <!--        // Attributes for the passwordDrawable if your EditText inputType="password"-->
+        <item name="passwordToggleDrawable">@drawable/design_password_eye</item>
+        <item name="passwordToggleTint">@color/dark_gray</item>
+        <item name="passwordToggleContentDescription">@string/password_toggle_content_description
+        </item>
+    </style>
+
+    <style name="Theme.SEVG.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+<!--        <item name="android:datePickerStyle">@style/my_dialog_theme</item>-->
+
+    </style>
+
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+        <!--        <item name="android:headerBackground">@color/dark_blue</item>-->
+        <item name="colorAccent">@color/dark_blue</item>                   <!--header background-->
+        <item name="android:colorControlActivated">@color/dark_blue</item> <!--selected day-->
+        <item name="android:textColorPrimary">@color/dark_blue</item> <!--days of the month-->
+        <item name="android:textColorSecondary">@color/dark_blue</item>
+
+    </style>
+
+    <style name="ThemeOverlay.App.DatePicker" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/dark_blue</item>
+    </style>
+
+</resources>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/sales_toolbar"
+        layout="@layout/toolbar_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/userName_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sevg_15dp"
+                android:hint="@string/user_name"
+                android:textColorHint="@color/dark_gray"
+                app:hintTextAppearance="@style/TextInputLayoutHintStyle">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:singleLine="true"
+                    android:textSize="@dimen/sevg_18sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/customerName_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sevg_15dp"
+                android:hint="@string/customer_name"
+                android:textColorHint="@color/dark_gray"
+                app:hintTextAppearance="@style/TextInputLayoutHintStyle">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/customerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:singleLine="true"
+                    android:textSize="@dimen/sevg_18sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/customerPhoneNo_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sevg_15dp"
+                android:hint="@string/customer_phone_no"
+                android:textColorHint="@color/dark_gray"
+                app:hintTextAppearance="@style/TextInputLayoutHintStyle">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/customerPhoneNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:singleLine="true"
+                    android:inputType="number|phone"
+                    android:textSize="@dimen/sevg_18sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sevg_10dp"
+                android:layout_marginBottom="@dimen/sevg_25dp"
+                android:layout_marginStart="@dimen/sevg_5dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/sevg_5dp"
+                    android:text="@string/date"
+                    android:textSize="@dimen/sevg_16sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/date_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sevg_10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sevg_18sp"/>
+
+
+                <include layout="@layout/horizontal_divider"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/addLineItemView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/sevg_5dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addLineItem_bt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_border"
+                android:layout_gravity="center"
+                android:text="@string/add_line_item"
+                android:textAllCaps="false"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/sevg_18sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addLineItem_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:visibility="invisible"
+                android:layout_marginStart="@dimen/sevg_10dp"
+                android:layout_marginBottom="@dimen/sevg_25dp"
+                tools:text="Error"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sevg_5dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="@dimen/sevg_5dp"
+                    android:text="@string/loading_charges"
+                    android:textSize="@dimen/sevg_16sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/loading_charge_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:layout_marginBottom="@dimen/sevg_15dp"
+                android:textColorHint="@color/dark_gray"
+                app:hintTextAppearance="@style/TextInputLayoutHintStyle">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/loading_charges"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:inputType="numberDecimal"
+                    android:gravity="end"
+                    android:singleLine="true"
+                    android:textSize="@dimen/sevg_18sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/sevg_5dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="@dimen/sevg_5dp"
+                    android:text="@string/transport_charges"
+                    android:textSize="@dimen/sevg_16sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/transport_charge_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/dark_gray"
+                android:layout_marginBottom="@dimen/sevg_15dp"
+                android:layout_weight="0.9"
+                app:hintTextAppearance="@style/TextInputLayoutHintStyle">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/transport_charge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:inputType="numberDecimal"
+                    android:gravity="end"
+                    android:singleLine="true"
+                    android:textSize="@dimen/sevg_18sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/semi_black"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sevg_15dp"
+                android:layout_marginBottom="@dimen/sevg_15dp"
+                android:layout_marginStart="@dimen/sevg_5dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="@dimen/sevg_5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end"
+                    android:text="@string/total_amount"
+                    android:textSize="@dimen/sevg_16sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/total_amount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:gravity="end"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="15dp"
+                    android:text="@string/empty_float"
+                    android:textSize="@dimen/sevg_18sp"/>
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textSize="@dimen/sevg_18sp"
+                android:layout_marginTop="@dimen/sevg_15dp"
+                android:backgroundTint="@color/dark_blue"
+                android:text="@string/submit"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="salesDetails"
+            type="com.example.sevg.module.SalesDetailsScreenPOJO" />
+
+        <variable
+            name="onClickInterface"
+            type="com.example.sevg.viewOnClickInterface.ViewOnClickListener" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/root_view">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/details_guideline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="200dp" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/sales_details_toolbar"
+                style="@style/Widget.MyApp.Details.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.MyApp.ActionBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:id="@+id/details_header"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/login_bg_gradient"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:padding="@dimen/sevg_10dp"
+                app:layout_constraintBottom_toTopOf="@+id/details_guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sales_details_toolbar">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{salesDetails.invoiceNumber}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sevg_18sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/sevg_25dp"
+                        android:text="@string/invoice_number"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sevg_16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{salesDetails.totalAmount}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sevg_18sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/invoice_amount"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sevg_16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{salesDetails.getDateFormatted()}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sevg_18sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/sevg_25dp"
+                        android:text="@string/date"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sevg_16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{salesDetails.customerName}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sevg_18sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/customer_name"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sevg_16sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/details_body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/sevg_10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/details_guideline">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sevg_10dp"
+                    android:text="@string/customer_phone_no"
+                    android:textColor="@color/bottom_nav_unselected"
+                    android:textSize="@dimen/sevg_16sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/sevg_20dp"
+                    android:text="@{salesDetails.customerMobileNo}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sevg_18sp" />
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cellborder"
+                    android:divider="@color/black"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:id="@+id/itemName_header"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/item_name"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <TextView
+                        android:id="@+id/amount_header"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/total_amount_title"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/tableBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="@dimen/sevg_5dp"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loading_charges"
+                    android:textColor="@color/bottom_nav_unselected"
+                    android:textSize="@dimen/sevg_16sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/sevg_20dp"
+                    android:text="@{salesDetails.loadingCharges}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sevg_18sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/transport_charges"
+                    android:textColor="@color/bottom_nav_unselected"
+                    android:textSize="@dimen/sevg_16sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{salesDetails.transportCharges}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sevg_18sp" />
+
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/sevg_15dp"
+                    android:clickable="true"
+                    android:backgroundTint="@color/dark_blue"
+                    android:onClick="@{(v)-> onClickInterface.onViewClick(v)}"
+                    android:text="@string/save"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/sevg_18sp"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

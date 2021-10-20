@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/inward_toolbar"
+        layout="@layout/toolbar_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sevg_5dp"
+                android:layout_marginBottom="@dimen/sevg_25dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/sevg_5dp"
+                    android:text="@string/transfer_status"
+                    android:textSize="@dimen/sevg_16sp" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/transfer_status_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <include layout="@layout/horizontal_divider" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/current_warehouse_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sevg_5dp"
+                android:layout_marginBottom="@dimen/sevg_25dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/sevg_5dp"
+                    android:text="@string/current_warehouse"
+                    android:textSize="@dimen/sevg_16sp" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/current_warehouse_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <include layout="@layout/horizontal_divider" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sevg_5dp"
+                android:layout_marginBottom="@dimen/sevg_25dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/sevg_5dp"
+                    android:text="@string/date"
+                    android:textSize="@dimen/sevg_16sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/date_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginStart="@dimen/sevg_10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sevg_18sp" />
+
+                <include layout="@layout/horizontal_divider" />
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/billNo_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sevg_15dp"
+                android:hint="@string/bill_no"
+                android:textColorHint="@color/dark_gray"
+                app:hintTextAppearance="@style/TextInputLayoutHintStyle">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/billNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sevg_18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/addLineItemView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sevg_5dp"
+                android:orientation="vertical"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addLineItem_bt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_border"
+                android:layout_gravity="center"
+                android:text="@string/add_line_item"
+                android:textAllCaps="false"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/sevg_18sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addLineItem_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/sevg_10dp"
+                tools:text="Error"/>
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/sevg_15dp"
+                android:text="@string/submit"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/dark_blue"
+                android:textSize="@dimen/sevg_18sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

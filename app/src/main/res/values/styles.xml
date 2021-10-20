@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Widget.MyApp.Toolbar.Solid" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@drawable/login_bg_gradient</item>
+        <item name="android:elevation" tools:ignore="NewApi">4dp</item>
+    </style>
+
+    <style name="Widget.MyApp.Details.Toolbar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/dark_blue</item>
+        <item name="android:elevation" tools:ignore="NewApi">0dp</item>
+    </style>
+
+
+    <style name="ThemeOverlay.MyApp.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
+    <!-- Parent theme sets colorControlNormal to textColorPrimary. -->
+    <item name="android:textColorPrimary">@color/white</item>
+    </style>
+
+<!--    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">-->
+<!--        &lt;!&ndash;        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>&ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/dark_blue</item>-->
+<!--        <item name="colorPrimaryDark">@color/dark_blue</item>-->
+<!--        <item name="colorAccent">@color/dark_blue</item>-->
+<!--    </style>-->
+
+</resources>
