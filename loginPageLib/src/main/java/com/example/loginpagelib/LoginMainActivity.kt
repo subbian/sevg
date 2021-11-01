@@ -36,17 +36,31 @@ class LoginMainActivity(private val mActivity: Activity,
 
         loginViewModel?.jsonViewModel?.observe(lifecycle, {
 
-            val dataHashMap = HashMap<K, K>()
-            dataHashMap["response"] = it["response"]
-            dataHashMap["method"] = it["method"]
-
             mActivity.linear_progressbar?.progress = 100
-            mLoginNetworkCallBack.loginSuccessful(dataHashMap)
-            mActivity.linear_progressbar?.postDelayed({
-            mActivity.progressbar_overview_layout?.visibility = View.GONE
-            mActivity.progressbar_layout?.visibility = View.GONE
-                mActivity.finish()
-            }, 2000)
+
+            if(it["isError"] == true)
+            {
+                mLoginNetworkCallBack.loginFailed()
+
+                mActivity.linear_progressbar?.postDelayed({
+                    mActivity.progressbar_overview_layout?.visibility = View.GONE
+                    mActivity.progressbar_layout?.visibility = View.GONE
+                }, 2000)
+            }
+            else
+            {
+                val dataHashMap = HashMap<K, K>()
+                dataHashMap["response"] = it["response"]
+                dataHashMap["method"] = it["method"]
+
+                mLoginNetworkCallBack.loginSuccessful(dataHashMap)
+
+                mActivity.linear_progressbar?.postDelayed({
+                    mActivity.progressbar_overview_layout?.visibility = View.GONE
+                    mActivity.progressbar_layout?.visibility = View.GONE
+                    mActivity.finish()
+                }, 2000)
+            }
         })
     }
 

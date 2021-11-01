@@ -127,11 +127,17 @@ class VolleyRequestClass(mutableLiveData: MutableLiveData<HashMap<K, K>>? = null
                 val dataHashMap = HashMap<K, K>()
                 dataHashMap["response"] = response
                 dataHashMap["method"] = method
+                dataHashMap["isError"] = false
 
                 jsonLiveData?.value = dataHashMap
 
             }, { error ->
                 // Error in request
+
+                val dataHashMap = HashMap<K, K>()
+                dataHashMap["isError"] = true
+
+                jsonLiveData?.value = dataHashMap
 
                 var errorMessage = ""
                 if (error is TimeoutError || error is NoConnectionError)
